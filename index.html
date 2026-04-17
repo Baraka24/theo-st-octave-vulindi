@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Hommage à Mgr l'Archevêque Emmanuel Kataliko">
+    <meta property="og:description" content="Coin du Théologien — Revue Culturelle et Théologique. Numéro Spécial, Réédition Avril 2026. Grand Séminaire Théologat Saint Octave, Butembo.">
+    <meta property="og:image" content="https://baraka24.github.io/theo-st-octave-vulindi/Imgs/AparaitreLorsDupartageviaWhatsapp.jpeg">
+    <meta property="og:type" content="article">
     <title>Coin du Théologien — Hommage à Mgr Emmanuel Kataliko</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
@@ -527,6 +531,75 @@
             line-height: 1.7;
         }
 
+        /* ====== WHATSAPP BUTTON ====== */
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 90;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25D366;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.55);
+        }
+
+        .whatsapp-fab svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
+        }
+
+        .whatsapp-fab .fab-tooltip {
+            position: absolute;
+            right: 72px;
+            background: #fff;
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            white-space: nowrap;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(8px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .whatsapp-fab:hover .fab-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-fab {
+                width: 52px;
+                height: 52px;
+                bottom: 1.2rem;
+                right: 1.2rem;
+            }
+            .whatsapp-fab svg {
+                width: 28px;
+                height: 28px;
+            }
+            .whatsapp-fab .fab-tooltip {
+                display: none;
+            }
+        }
+
         /* ====== FOOTER ====== */
         .footer {
             background: var(--primary);
@@ -904,6 +977,12 @@
         </div>
     </section>
 
+    <!-- WHATSAPP SHARE BUTTON -->
+    <button class="whatsapp-fab" id="whatsappBtn" aria-label="Partager via WhatsApp">
+        <span class="fab-tooltip">Partager via WhatsApp</span>
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 0C7.164 0 .002 7.16.002 15.997c0 2.818.736 5.574 2.137 7.998L.014 32l8.208-2.15a15.94 15.94 0 007.78 1.988h.007C24.843 31.838 32 24.676 32 15.997 32 7.16 24.843 0 16.004 0zm0 29.298a13.36 13.36 0 01-6.81-1.866l-.488-.29-5.065 1.328 1.352-4.937-.318-.505A13.3 13.3 0 012.548 15.997c0-7.42 6.04-13.457 13.46-13.457 7.418 0 13.453 6.037 13.453 13.457-.003 7.42-6.04 13.301-13.457 13.301zm7.386-10.082c-.405-.203-2.396-1.182-2.768-1.316-.372-.137-.643-.203-.913.203-.27.405-1.048 1.316-1.285 1.588-.236.27-.473.305-.878.102-.405-.203-1.71-.63-3.258-2.01-1.204-1.074-2.017-2.4-2.253-2.805-.236-.405-.025-.624.178-.826.182-.182.405-.474.608-.71.203-.237.27-.406.405-.677.135-.27.068-.508-.034-.71-.102-.204-.913-2.2-1.25-3.013-.33-.79-.665-.684-.913-.696-.236-.01-.508-.013-.778-.013s-.71.102-1.082.508c-.372.405-1.42 1.387-1.42 3.382s1.454 3.924 1.657 4.194c.203.27 2.862 4.37 6.935 6.13.969.418 1.725.668 2.315.855.973.31 1.858.266 2.558.16.78-.116 2.396-.979 2.734-1.924.338-.945.338-1.754.236-1.924-.1-.17-.37-.27-.776-.474z"/></svg>
+    </button>
+
     <!-- FOOTER -->
     <footer class="footer">
         <p class="footer-brand">Coin du Théologien</p>
@@ -971,6 +1050,15 @@
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeLightbox();
+        });
+
+        // === WhatsApp Share ===
+        document.getElementById('whatsappBtn').addEventListener('click', () => {
+            const pageUrl = window.location.href;
+            const text = encodeURIComponent(
+                'Hommage à Mgr l\'Archevêque Emmanuel Kataliko — Coin du Théologien, Revue Culturelle et Théologique. Numéro Spécial, Réédition Avril 2026.\n\n' + pageUrl
+            );
+            window.open('https://wa.me/?text=' + text, '_blank', 'noopener');
         });
     </script>
 </body>
