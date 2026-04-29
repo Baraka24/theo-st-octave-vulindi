@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Hommage à Mgr l'Archevêque Emmanuel Kataliko">
+    <meta property="og:description" content="Coin du Théologien — Revue Culturelle et Théologique. Numéro Spécial, Réédition Avril 2026. Grand Séminaire Théologat Saint Octave, Butembo.">
+    <meta property="og:image" content="https://baraka24.github.io/theo-st-octave-vulindi/Imgs/AparaitreLorsDupartageviaWhatsapp.jpeg">
+    <meta property="og:type" content="article">
+    <title>Coin du Théologien — Hommage à Mgr Emmanuel Kataliko</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a5c;
+            --primary-light: #2a5a8c;
+            --accent: #8b1a1a;
+            --gold: #c9a84c;
+            --gold-light: #e0c96e;
+            --cream: #faf6ef;
+            --text: #2c2c2c;
+            --text-light: #555;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.15);
+            --sky-blue: #5fa8d3;
+            --sky-blue-light: #a3d4f7;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', Georgia, serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* ====== HEADER / HERO ====== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1f33 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(90, 168, 211, 0.15) 0%, transparent 70%),
+                        radial-gradient(ellipse at 70% 30%, rgba(201, 168, 76, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.4rem 1.5rem;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 1s 0.3s forwards;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeUp 1s 0.5s forwards;
+        }
+
+        .hero h1 em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: var(--sky-blue-light);
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 1s 0.7s forwards;
+        }
+
+        .hero-cover {
+            position: relative;
+            width: 280px;
+            max-width: 80vw;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 1.2s 0.9s forwards;
+        }
+
+        .hero-cover img {
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-cover::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        .hero-meta {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 1s 1.1s forwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: color 0.3s;
+            opacity: 0;
+            animation: fadeUp 1s 1.5s forwards;
+        }
+
+        .scroll-indicator:hover {
+            color: var(--gold);
+        }
+
+        .scroll-indicator .arrow {
+            width: 1px;
+            height: 40px;
+            background: currentColor;
+            position: relative;
+            animation: scrollBounce 2s infinite;
+        }
+
+        /* ====== NAVIGATION ====== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(26, 58, 92, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.6rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ====== SECTIONS ====== */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            margin-bottom: 2.5rem;
+            border-radius: 2px;
+        }
+
+        /* ====== PRÉFACE ====== */
+        #preface {
+            background: var(--white);
+        }
+
+        .preface-intro {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--primary);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            border-left: 3px solid var(--gold);
+            padding-left: 1.5rem;
+        }
+
+        .preface-text {
+            font-size: 1.05rem;
+            color: var(--text);
+            margin-bottom: 1.8rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .preface-text:first-letter {
+            font-size: 1em;
+        }
+
+        .drop-cap::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            float: left;
+            line-height: 0.8;
+            margin-right: 0.5rem;
+            margin-top: 0.15rem;
+            color: var(--primary);
+        }
+
+        /* ====== PORTRAIT SECTION ====== */
+        #portrait {
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1f33 100%);
+            color: var(--white);
+        }
+
+        #portrait .section-title {
+            color: var(--white);
+        }
+
+        .portrait-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .portrait-image {
+            position: relative;
+        }
+
+        .portrait-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .portrait-image::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .portrait-text {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .portrait-caption {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: var(--gold);
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* ====== GALLERY ====== */
+        #gallery {
+            background: var(--cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 8px 30px var(--shadow);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .gallery-overlay p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+        }
+
+        /* ====== AUTEUR ====== */
+        #author {
+            background: var(--white);
+        }
+
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: linear-gradient(135deg, #f8f4ec, #faf6ef);
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            margin-top: 2rem;
+        }
+
+        .author-icon {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .author-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info .author-role {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .author-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ====== WHATSAPP BUTTON ====== */
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 90;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25D366;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.55);
+        }
+
+        .whatsapp-fab svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
+        }
+
+        .whatsapp-fab .fab-tooltip {
+            position: absolute;
+            right: 72px;
+            background: #fff;
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            white-space: nowrap;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(8px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .whatsapp-fab:hover .fab-tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-fab {
+                width: 52px;
+                height: 52px;
+                bottom: 1.2rem;
+                right: 1.2rem;
+            }
+            .whatsapp-fab svg {
+                width: 28px;
+                height: 28px;
+            }
+            .whatsapp-fab .fab-tooltip {
+                display: none;
+            }
+        }
+
+        /* ====== FOOTER ====== */
+        .footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+        }
+
+        /* ====== LIGHTBOX ====== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: zoom-out;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            opacity: 1;
+        }
+
+        /* ====== ANIMATIONS ====== */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(26, 58, 92, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2.5rem;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+            }
+
+            .hamburger {
+                display: flex;
+                z-index: 101;
+            }
+
+            section {
+                padding: 3.5rem 1.25rem;
+            }
+
+            .portrait-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .portrait-image {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 300px;
+            }
+
+            .author-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-cover {
+                width: 220px;
+            }
+
+            .preface-intro {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-cover {
+                width: 180px;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+
+            .author-icon {
+                width: 65px;
+                height: 65px;
+                min-width: 65px;
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-brand">Coin du Théologien</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#preface" onclick="closeMenu()">Préface</a></li>
+            <li><a href="#portrait" onclick="closeMenu()">Portrait</a></li>
+            <li><a href="#gallery" onclick="closeMenu()">Galerie</a></li>
+            <li><a href="#author" onclick="closeMenu()">Auteur</a></li>
+            <li><a href="page1.html" onclick="closeMenu()">N°3</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Numéro Spécial — Réédition Avril 2026</span>
+            <h1>Hommage à Mgr l'Archevêque<br><em>Emmanuel Kataliko</em></h1>
+            <p class="hero-subtitle">Revue Culturelle et Théologique</p>
+            <div class="hero-cover">
+                <img src="Imgs/Revue1.jpeg" alt="Couverture de la revue Coin du Théologien">
+            </div>
+            <p class="hero-meta">Grand Séminaire Théologat Saint Octave &middot; Butembo &middot; RD Congo</p>
+        </div>
+        <a href="#preface" class="scroll-indicator">
+            <span>Lire</span>
+            <span class="arrow"></span>
+        </a>
+    </section>
+
+    <!-- PRÉFACE -->
+    <section id="preface">
+        <div class="container">
+            <span class="section-label reveal">Préface</span>
+            <h2 class="section-title reveal">En mémoire d'un grand Pasteur</h2>
+            <div class="divider reveal"></div>
+
+            <p class="preface-intro reveal">
+                <strong>« Voici de cela 25 ans que le Seigneur a retiré de ce monde son serviteur
+                Mgr Emmanuel Kataliko, ancien Évêque du Diocèse de Butembo-Beni d'abord,
+                et Archevêque de Bukavu ensuite. Le Théologat Saint-Octave était, lui aussi,
+                dévasté par la tristesse »</strong>,&nbsp; écrit l'Abbé <em>KAHUMBA PALUKU Ambroise</em>.
+            </p>
+
+            <p class="preface-text drop-cap reveal">
+                Voici de cela 25 ans que le Seigneur a retiré de ce monde son serviteur Mgr Emmanuel Kataliko,
+                ancien Évêque du Diocèse de Butembo-Beni d'abord, et Archevêque de Bukavu ensuite.
+                Les chrétiens de ces deux diocèses l'ont vu arraché à leur affection, alors que, comme cela
+                se dit communément en pareille circonstance, on avait encore besoin des conseils qui
+                jaillissaient de sa sagesse pleine de pragmatisme. La nouvelle de son décès est tombée
+                comme un poignard qui s'enfonçait dans le cœur de plusieurs, provoquant une douleur on
+                ne peut plus dévastatrice. Et cela a poussé plus d'un à exprimer sa souffrance et sa
+                tristesse, qui par un écrit, qui par un chant, qui par un poème, qui par une peinture,
+                qui par une sculpture, etc…
+            </p>
+
+            <p class="preface-text reveal">
+                Le Théologat St Octave était, lui aussi, dévasté par la tristesse. Il se sentait d'autant
+                plus triste que l'Archevêque Kataliko avait été, non seulement son fondateur et initiateur,
+                mais aussi son conseiller et son soutien. Il ne serait effectivement pas exagéré de dire
+                que Monseigneur Kataliko a eu ce Séminaire comme la pupille de son œil. Cela pouvait se
+                vérifier, surtout aux origines, par le fait que, quand l'occasion d'une visite se présentait,
+                même quotidiennement au besoin, Monseigneur l'Archevêque ne pouvait pas s'empêcher de la
+                saisir. En outre, séminaristes et formateurs du théologat avaient eu, en plus d'une occasion,
+                l'opportunité de recevoir ses conseils constructifs, de bénéficier de sa générosité
+                désintéressée, d'admirer son indéfectible fidélité à la prière quotidienne, notamment
+                l'Eucharistie, la Liturgie des Heures et le saint Rosaire par lequel il manifestait sa
+                remarquable et évidente dévotion envers la Mère de Dieu.
+            </p>
+
+            <p class="preface-text reveal">
+                Le Théologat a donc, lui aussi, voulu mettre par écrit, dans le vif de cette douleur de la
+                séparation, ce qu'il éprouvait en ces jours-là, jours lugubres, qui suivaient d'une part,
+                l'annonce funeste de la triste nouvelle, et d'autre part, l'inhumation de ce grand pasteur.
+                C'est ainsi que certains formateurs et certains séminaristes ont alors entrepris d'écrire
+                ce que nous vous livrons dans les pages qui suivent. Ce sont des textes dont nous n'avons
+                voulu rien modifier, afin de donner aux lecteurs d'aujourd'hui, d'expérimenter un tant soit
+                peu le degré et l'intensité de l'émotion ressentie alors.
+            </p>
+
+            <p class="preface-text reveal">
+                Nous livrons ces textes à la lecture de qui voudra en prendre connaissance, avec un sentiment
+                de gratitude envers Dieu qui a voulu nous donner un autre Pasteur, en la personne de son
+                Excellence Mgr SIKULI PALUKU Melchisédech. Celui-ci continue à porter dans son cœur l'œuvre
+                initiée par son prédécesseur, à savoir ce Théologat Saint Octave.
+            </p>
+
+            <p class="preface-text reveal">
+                À tous ceux et celles qui voudront bien parcourir cette brochure, nous souhaitons une bonne
+                lecture et demandons de garder tous les jours une pensée pieuse à l'endroit de ce pasteur
+                dont les brebis ont, par leur docilité et leur amour, apprécié à sa juste valeur, la
+                participation au souverain pastorat du Christ.
+            </p>
+        </div>
+    </section>
+
+    <!-- PORTRAIT -->
+    <section id="portrait">
+        <div class="container">
+            <span class="section-label reveal">Portrait</span>
+            <h2 class="section-title reveal">Mgr Emmanuel Kataliko</h2>
+            <div class="divider reveal"></div>
+
+            <div class="portrait-grid">
+                <div class="portrait-image reveal">
+                    <img src="Imgs/KATALIKO .jpeg" alt="Portrait peint de Mgr Emmanuel Kataliko">
+                    <p class="portrait-caption">Portrait de Mgr Emmanuel Kataliko</p>
+                </div>
+                <div class="portrait-text reveal">
+                    <p>
+                        Fondateur et initiateur du Théologat Saint Octave, Mgr Emmanuel Kataliko
+                        a été un pasteur d'exception dont la sagesse et le dévouement ont profondément
+                        marqué les diocèses de Butembo-Beni et de Bukavu.
+                    </p>
+                    <br>
+                    <p>
+                        Son indéfectible fidélité à la prière, sa générosité désintéressée et ses
+                        conseils constructifs ont fait de lui un guide spirituel irremplaçable pour
+                        les séminaristes et formateurs qui ont eu le privilège de le côtoyer.
+                    </p>
+                    <br>
+                    <p>
+                        Vingt-cinq ans après son rappel à Dieu, son héritage continue de vivre
+                        à travers le Théologat qu'il a fondé et les générations de prêtres qu'il
+                        a contribué à former.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="gallery">
+        <div class="container">
+            <span class="section-label reveal">Galerie</span>
+            <h2 class="section-title reveal">Images de la Revue</h2>
+            <div class="divider reveal"></div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="Imgs/Revue2.jpeg" alt="Couverture de la revue — Coin du Théologien">
+                    <div class="gallery-overlay">
+                        <h4>Coin du Théologien</h4>
+                        <p>Couverture de la revue — Numéro Spécial</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="Imgs/SeminaristeDalzon.jpeg" alt="Séminariste devant le portrait de Mgr Kataliko">
+                    <div class="gallery-overlay">
+                        <h4>Héritage vivant</h4>
+                        <p>Un séminariste devant le portrait de Mgr Kataliko</p>
+                    </div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox(this)">
+                    <img src="Imgs/KATALIKO .jpeg" alt="Portrait peint de Mgr Kataliko">
+                    <div class="gallery-overlay">
+                        <h4>Mgr Kataliko</h4>
+                        <p>Portrait commémoratif</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTEUR -->
+    <section id="author">
+        <div class="container">
+            <span class="section-label reveal">Auteur de la préface</span>
+            <h2 class="section-title reveal">Abbé Kahumba Paluku Ambroise</h2>
+            <div class="divider reveal"></div>
+
+            <div class="author-card reveal">
+                <div class="author-icon">KP</div>
+                <div class="author-info">
+                    <h3>Abbé KAHUMBA PALUKU Ambroise</h3>
+                    <p class="author-role">Préfacier</p>
+                    <p>
+                        Auteur de cette préface rendant hommage à Mgr Emmanuel Kataliko,
+                        l'Abbé Kahumba Paluku Ambroise témoigne, à travers ces lignes,
+                        de la profonde estime et de la gratitude du Théologat Saint Octave
+                        envers son fondateur.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHATSAPP SHARE BUTTON -->
+    <button class="whatsapp-fab" id="whatsappBtn" aria-label="Partager via WhatsApp">
+        <span class="fab-tooltip">Partager via WhatsApp</span>
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 0C7.164 0 .002 7.16.002 15.997c0 2.818.736 5.574 2.137 7.998L.014 32l8.208-2.15a15.94 15.94 0 007.78 1.988h.007C24.843 31.838 32 24.676 32 15.997 32 7.16 24.843 0 16.004 0zm0 29.298a13.36 13.36 0 01-6.81-1.866l-.488-.29-5.065 1.328 1.352-4.937-.318-.505A13.3 13.3 0 012.548 15.997c0-7.42 6.04-13.457 13.46-13.457 7.418 0 13.453 6.037 13.453 13.457-.003 7.42-6.04 13.301-13.457 13.301zm7.386-10.082c-.405-.203-2.396-1.182-2.768-1.316-.372-.137-.643-.203-.913.203-.27.405-1.048 1.316-1.285 1.588-.236.27-.473.305-.878.102-.405-.203-1.71-.63-3.258-2.01-1.204-1.074-2.017-2.4-2.253-2.805-.236-.405-.025-.624.178-.826.182-.182.405-.474.608-.71.203-.237.27-.406.405-.677.135-.27.068-.508-.034-.71-.102-.204-.913-2.2-1.25-3.013-.33-.79-.665-.684-.913-.696-.236-.01-.508-.013-.778-.013s-.71.102-1.082.508c-.372.405-1.42 1.387-1.42 3.382s1.454 3.924 1.657 4.194c.203.27 2.862 4.37 6.935 6.13.969.418 1.725.668 2.315.855.973.31 1.858.266 2.558.16.78-.116 2.396-.979 2.734-1.924.338-.945.338-1.754.236-1.924-.1-.17-.37-.27-.776-.474z"/></svg>
+    </button>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p class="footer-brand">Coin du Théologien</p>
+        <p class="footer-tagline"><em>Profer lumen caecis</em></p>
+        <p>Grand Séminaire Théologat Saint Octave &middot; Butembo &middot; République Démocratique du Congo</p>
+        <p style="margin-top: 1rem; opacity: 0.5;">Numéro Spécial — Réédition Avril 2026</p>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" aria-label="Fermer">&times;</button>
+        <img src="" alt="Image agrandie" id="lightboxImg">
+    </div>
+
+    <script>
+        // === Navbar scroll effect ===
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // === Hamburger menu ===
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('open');
+        }
+
+        // === Scroll reveal ===
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // === Lightbox ===
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(item) {
+            const img = item.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // === WhatsApp Share ===
+        document.getElementById('whatsappBtn').addEventListener('click', () => {
+            const pageUrl = window.location.href;
+            const text = encodeURIComponent(
+                'Hommage à Mgr l\'Archevêque Emmanuel Kataliko — Coin du Théologien, Revue Culturelle et Théologique. Numéro Spécial, Réédition Avril 2026.\n\n' + pageUrl
+            );
+            window.open('https://wa.me/?text=' + text, '_blank', 'noopener');
+        });
+    </script>
+</body>
+</html>
